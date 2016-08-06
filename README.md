@@ -6,4 +6,4 @@ to view the example:
 - type `npm start`
 - open [http://localhost:6661](http://localhost:6661)
 
-https://gfycat.com/ifr/PleasingOblongBustard
+[Video](https://gfycat.com/ifr/PleasingOblongBustard)
