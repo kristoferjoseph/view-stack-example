@@ -11,7 +11,7 @@ module.exports = function A(data) {
   `
 }
 
-},{"./button":3,"yo-yo":25}],2:[function(require,module,exports){
+},{"./button":3,"yo-yo":26}],2:[function(require,module,exports){
 var yo = require('yo-yo')
 var btn = require('./button')
 module.exports = function B(data) {
@@ -24,7 +24,7 @@ module.exports = function B(data) {
   `
 }
 
-},{"./button":3,"yo-yo":25}],3:[function(require,module,exports){
+},{"./button":3,"yo-yo":26}],3:[function(require,module,exports){
 var yo = require('yo-yo')
 
 module.exports = function(data) {
@@ -41,7 +41,7 @@ module.exports = function(data) {
   `
 }
 
-},{"yo-yo":25}],4:[function(require,module,exports){
+},{"yo-yo":26}],4:[function(require,module,exports){
 var yo = require('yo-yo')
 var btn = require('./button')
 module.exports = function C(data) {
@@ -54,7 +54,7 @@ module.exports = function C(data) {
   `
 }
 
-},{"./button":3,"yo-yo":25}],5:[function(require,module,exports){
+},{"./button":3,"yo-yo":26}],5:[function(require,module,exports){
 var yo = require('yo-yo')
 var btn = require('./button')
 module.exports = function D(data) {
@@ -67,17 +67,20 @@ module.exports = function D(data) {
   `
 }
 
-},{"./button":3,"yo-yo":25}],6:[function(require,module,exports){
+},{"./button":3,"yo-yo":26}],6:[function(require,module,exports){
 var createViewStack = require('view-stack')
 var routes = require('./routes')
 var viewStack = createViewStack(routes)
 document.body.appendChild(viewStack)
 
-},{"./routes":24,"view-stack":7}],7:[function(require,module,exports){
+},{"./routes":25,"view-stack":8}],7:[function(require,module,exports){
+
+},{}],8:[function(require,module,exports){
 var router = require('thataway')()
 var yo = require('yo-yo')
 
-module.exports = function viewStack(routes) {
+module.exports = function viewStack(routes, path) {
+  path = path || location.pathname || '/'
   var view
   var data
   var persistentLayers = {}
@@ -91,7 +94,7 @@ module.exports = function viewStack(routes) {
   }
 
   router.addListener(update)
-  data = router.getRouteData(location.pathname)
+  data = router.getRouteData(path)
   data.navigate = router.navigate
 
   function create(data) {
@@ -130,7 +133,7 @@ function Layer(data) {
   `
 }
 
-},{"thataway":8,"yo-yo":15}],8:[function(require,module,exports){
+},{"thataway":9,"yo-yo":16}],9:[function(require,module,exports){
 var queryString = require('query-string')
 var routerParams = require('router-params')
 
@@ -233,7 +236,7 @@ module.exports = function thataway() {
 
 }
 
-},{"query-string":9,"router-params":12}],9:[function(require,module,exports){
+},{"query-string":10,"router-params":13}],10:[function(require,module,exports){
 'use strict';
 var strictUriEncode = require('strict-uri-encode');
 var objectAssign = require('object-assign');
@@ -333,7 +336,7 @@ exports.stringify = function (obj, opts) {
 	}).join('&') : '';
 };
 
-},{"object-assign":10,"strict-uri-encode":11}],10:[function(require,module,exports){
+},{"object-assign":11,"strict-uri-encode":12}],11:[function(require,module,exports){
 'use strict';
 /* eslint-disable no-unused-vars */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -418,7 +421,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -426,7 +429,7 @@ module.exports = function (str) {
 	});
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 var pathToRegexp = require('path-to-regexp')
 
 module.exports = function createPattern(path) {
@@ -468,7 +471,7 @@ function decodeValue(value) {
   }
 }
 
-},{"path-to-regexp":13}],13:[function(require,module,exports){
+},{"path-to-regexp":14}],14:[function(require,module,exports){
 var isarray = require('isarray')
 
 /**
@@ -896,12 +899,12 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":14}],14:[function(require,module,exports){
+},{"isarray":15}],15:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 var bel = require('bel') // turns template tag into DOM elements
 var morphdom = require('morphdom') // efficiently diffs + morphs two DOM elements
 var defaultEvents = require('./update-events.js') // default events to be copied when dom elements update
@@ -937,7 +940,7 @@ module.exports.update = function (fromNode, toNode, opts) {
   }
 }
 
-},{"./update-events.js":23,"bel":16,"morphdom":22}],16:[function(require,module,exports){
+},{"./update-events.js":24,"bel":17,"morphdom":23}],17:[function(require,module,exports){
 var document = require('global/document')
 var hyperx = require('hyperx')
 var onload = require('on-load')
@@ -1079,7 +1082,7 @@ function belCreateElement (tag, props, children) {
 module.exports = hyperx(belCreateElement)
 module.exports.createElement = belCreateElement
 
-},{"global/document":17,"hyperx":19,"on-load":21}],17:[function(require,module,exports){
+},{"global/document":18,"hyperx":20,"on-load":22}],18:[function(require,module,exports){
 (function (global){
 var topLevel = typeof global !== 'undefined' ? global :
     typeof window !== 'undefined' ? window : {}
@@ -1098,7 +1101,7 @@ if (typeof document !== 'undefined') {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"min-document":32}],18:[function(require,module,exports){
+},{"min-document":7}],19:[function(require,module,exports){
 (function (global){
 if (typeof window !== "undefined") {
     module.exports = window;
@@ -1111,7 +1114,7 @@ if (typeof window !== "undefined") {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 var attrToProp = require('hyperscript-attribute-to-property')
 
 var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
@@ -1376,7 +1379,7 @@ var closeRE = RegExp('^(' + [
 ].join('|') + ')(?:[\.#][a-zA-Z0-9\u007F-\uFFFF_:-]+)*$')
 function selfClosing (tag) { return closeRE.test(tag) }
 
-},{"hyperscript-attribute-to-property":20}],20:[function(require,module,exports){
+},{"hyperscript-attribute-to-property":21}],21:[function(require,module,exports){
 module.exports = attributeToProperty
 
 var transform = {
@@ -1397,7 +1400,7 @@ function attributeToProperty (h) {
   }
 }
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /* global MutationObserver */
 var document = require('global/document')
 var window = require('global/window')
@@ -1486,7 +1489,7 @@ function eachMutation (nodes, fn) {
   }
 }
 
-},{"global/document":17,"global/window":18}],22:[function(require,module,exports){
+},{"global/document":18,"global/window":19}],23:[function(require,module,exports){
 // Create a range object for efficently rendering strings to elements.
 var range;
 
@@ -2069,7 +2072,7 @@ function morphdom(fromNode, toNode, options) {
 
 module.exports = morphdom;
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 module.exports = [
   // attribute events (can be set with attributes)
   'onclick',
@@ -2107,7 +2110,7 @@ module.exports = [
   'onfocusout'
 ]
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 module.exports = [
   {
     path: '/',
@@ -2155,7 +2158,7 @@ module.exports = [
   }
 ]
 
-},{"./components/a":1,"./components/b":2,"./components/c":4,"./components/d":5}],25:[function(require,module,exports){
+},{"./components/a":1,"./components/b":2,"./components/c":4,"./components/d":5}],26:[function(require,module,exports){
 var bel = require('bel') // turns template tag into DOM elements
 var morphdom = require('morphdom') // efficiently diffs + morphs two DOM elements
 var defaultEvents = require('./update-events.js') // default events to be copied when dom elements update
@@ -2191,7 +2194,7 @@ module.exports.update = function (fromNode, toNode, opts) {
   }
 }
 
-},{"./update-events.js":31,"bel":26,"morphdom":30}],26:[function(require,module,exports){
+},{"./update-events.js":32,"bel":27,"morphdom":31}],27:[function(require,module,exports){
 var document = require('global/document')
 var hyperx = require('hyperx')
 
@@ -2316,13 +2319,13 @@ function belCreateElement (tag, props, children) {
 module.exports = hyperx(belCreateElement)
 module.exports.createElement = belCreateElement
 
-},{"global/document":27,"hyperx":28}],27:[function(require,module,exports){
-arguments[4][17][0].apply(exports,arguments)
-},{"dup":17,"min-document":32}],28:[function(require,module,exports){
-arguments[4][19][0].apply(exports,arguments)
-},{"dup":19,"hyperscript-attribute-to-property":29}],29:[function(require,module,exports){
+},{"global/document":28,"hyperx":29}],28:[function(require,module,exports){
+arguments[4][18][0].apply(exports,arguments)
+},{"dup":18,"min-document":7}],29:[function(require,module,exports){
 arguments[4][20][0].apply(exports,arguments)
-},{"dup":20}],30:[function(require,module,exports){
+},{"dup":20,"hyperscript-attribute-to-property":30}],30:[function(require,module,exports){
+arguments[4][21][0].apply(exports,arguments)
+},{"dup":21}],31:[function(require,module,exports){
 // Create a range object for efficently rendering strings to elements.
 var range;
 
@@ -2896,8 +2899,6 @@ function morphdom(fromNode, toNode, options) {
 
 module.exports = morphdom;
 
-},{}],31:[function(require,module,exports){
-arguments[4][23][0].apply(exports,arguments)
-},{"dup":23}],32:[function(require,module,exports){
-
-},{}]},{},[6]);
+},{}],32:[function(require,module,exports){
+arguments[4][24][0].apply(exports,arguments)
+},{"dup":24}]},{},[6]);

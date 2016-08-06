@@ -29,7 +29,7 @@
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
-    "view-stack": "^4.0.1"
+    "view-stack": "^5.0.0"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
