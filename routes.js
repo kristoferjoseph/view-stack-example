@@ -5,7 +5,7 @@ module.exports = [
       persist: true,
       layer: 'screens',
       callback: function() {
-        return require('./components/a')
+        return require('./screens/a')
       }
     }
   }, {
@@ -14,7 +14,7 @@ module.exports = [
       persist: true,
       layer: 'screens',
       callback: function() {
-        return require('./components/a')
+        return require('./screens/a')
       }
     }
   }, {
@@ -23,7 +23,7 @@ module.exports = [
       persist: true,
       layer: 'screens',
       callback: function() {
-        return require('./components/b')
+        return require('./screens/b')
       }
     }
   }, {
@@ -31,7 +31,7 @@ module.exports = [
     data: {
       layer: 'sheets',
       callback: function() {
-        return require('./components/c')
+        return require('./screens/c')
       }
     }
   }, {
@@ -39,7 +39,7 @@ module.exports = [
     data: {
       layer: 'modals',
       callback: function() {
-        return require('./components/d')
+        return require('./screens/d')
       }
     }
   }

@@ -1,5 +1,5 @@
 var yo = require('yo-yo')
-var btn = require('./button')
+var btn = require('../components/button')
 module.exports = function B(data) {
   data.next = '/c'
   return yo`
