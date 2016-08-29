@@ -1,31 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var yo = require('yo-yo')
-var btn = require('./button')
-module.exports = function A(data) {
-  data.next = '/b'
-  return yo`
-    <div class='a'>
-      <h1>A</h1>
-      ${btn(data)}
-    </div>
-  `
-}
-
-},{"./button":3,"yo-yo":26}],2:[function(require,module,exports){
-var yo = require('yo-yo')
-var btn = require('./button')
-module.exports = function B(data) {
-  data.next = '/c'
-  return yo`
-    <div class='b'>
-      <h1>B</h1>
-      ${btn(data)}
-    </div>
-  `
-}
-
-},{"./button":3,"yo-yo":26}],3:[function(require,module,exports){
-var yo = require('yo-yo')
 
 module.exports = function(data) {
   function click(e) {
@@ -41,41 +15,15 @@ module.exports = function(data) {
   `
 }
 
-},{"yo-yo":26}],4:[function(require,module,exports){
-var yo = require('yo-yo')
-var btn = require('./button')
-module.exports = function C(data) {
-  data.next = '/d'
-  return yo`
-    <div class='c'>
-      <h1>C</h1>
-      ${btn(data)}
-    </div>
-  `
-}
-
-},{"./button":3,"yo-yo":26}],5:[function(require,module,exports){
-var yo = require('yo-yo')
-var btn = require('./button')
-module.exports = function D(data) {
-  data.next = '/'
-  return yo`
-    <div class='d'>
-      <h1>D</h1>
-      ${btn(data)}
-    </div>
-  `
-}
-
-},{"./button":3,"yo-yo":26}],6:[function(require,module,exports){
+},{"yo-yo":26}],2:[function(require,module,exports){
 var createViewStack = require('view-stack')
 var routes = require('./routes')
 var viewStack = createViewStack(routes)
 document.body.appendChild(viewStack)
 
-},{"./routes":25,"view-stack":8}],7:[function(require,module,exports){
+},{"./routes":21,"view-stack":4}],3:[function(require,module,exports){
 
-},{}],8:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var router = require('thataway')()
 var yo = require('yo-yo')
 
@@ -133,7 +81,7 @@ function Layer(data) {
   `
 }
 
-},{"thataway":9,"yo-yo":16}],9:[function(require,module,exports){
+},{"thataway":5,"yo-yo":12}],5:[function(require,module,exports){
 var queryString = require('query-string')
 var routerParams = require('router-params')
 
@@ -236,7 +184,7 @@ module.exports = function thataway() {
 
 }
 
-},{"query-string":10,"router-params":13}],10:[function(require,module,exports){
+},{"query-string":6,"router-params":9}],6:[function(require,module,exports){
 'use strict';
 var strictUriEncode = require('strict-uri-encode');
 var objectAssign = require('object-assign');
@@ -336,7 +284,7 @@ exports.stringify = function (obj, opts) {
 	}).join('&') : '';
 };
 
-},{"object-assign":11,"strict-uri-encode":12}],11:[function(require,module,exports){
+},{"object-assign":7,"strict-uri-encode":8}],7:[function(require,module,exports){
 'use strict';
 /* eslint-disable no-unused-vars */
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -421,7 +369,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],12:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -429,7 +377,7 @@ module.exports = function (str) {
 	});
 };
 
-},{}],13:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var pathToRegexp = require('path-to-regexp')
 
 module.exports = function createPattern(path) {
@@ -471,7 +419,7 @@ function decodeValue(value) {
   }
 }
 
-},{"path-to-regexp":14}],14:[function(require,module,exports){
+},{"path-to-regexp":10}],10:[function(require,module,exports){
 var isarray = require('isarray')
 
 /**
@@ -899,12 +847,12 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":15}],15:[function(require,module,exports){
+},{"isarray":11}],11:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],16:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 var bel = require('bel') // turns template tag into DOM elements
 var morphdom = require('morphdom') // efficiently diffs + morphs two DOM elements
 var defaultEvents = require('./update-events.js') // default events to be copied when dom elements update
@@ -940,7 +888,7 @@ module.exports.update = function (fromNode, toNode, opts) {
   }
 }
 
-},{"./update-events.js":24,"bel":17,"morphdom":23}],17:[function(require,module,exports){
+},{"./update-events.js":20,"bel":13,"morphdom":19}],13:[function(require,module,exports){
 var document = require('global/document')
 var hyperx = require('hyperx')
 var onload = require('on-load')
@@ -1082,7 +1030,7 @@ function belCreateElement (tag, props, children) {
 module.exports = hyperx(belCreateElement)
 module.exports.createElement = belCreateElement
 
-},{"global/document":18,"hyperx":20,"on-load":22}],18:[function(require,module,exports){
+},{"global/document":14,"hyperx":16,"on-load":18}],14:[function(require,module,exports){
 (function (global){
 var topLevel = typeof global !== 'undefined' ? global :
     typeof window !== 'undefined' ? window : {}
@@ -1101,7 +1049,7 @@ if (typeof document !== 'undefined') {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"min-document":7}],19:[function(require,module,exports){
+},{"min-document":3}],15:[function(require,module,exports){
 (function (global){
 if (typeof window !== "undefined") {
     module.exports = window;
@@ -1114,7 +1062,7 @@ if (typeof window !== "undefined") {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],20:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 var attrToProp = require('hyperscript-attribute-to-property')
 
 var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
@@ -1379,7 +1327,7 @@ var closeRE = RegExp('^(' + [
 ].join('|') + ')(?:[\.#][a-zA-Z0-9\u007F-\uFFFF_:-]+)*$')
 function selfClosing (tag) { return closeRE.test(tag) }
 
-},{"hyperscript-attribute-to-property":21}],21:[function(require,module,exports){
+},{"hyperscript-attribute-to-property":17}],17:[function(require,module,exports){
 module.exports = attributeToProperty
 
 var transform = {
@@ -1400,7 +1348,7 @@ function attributeToProperty (h) {
   }
 }
 
-},{}],22:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /* global MutationObserver */
 var document = require('global/document')
 var window = require('global/window')
@@ -1489,7 +1437,7 @@ function eachMutation (nodes, fn) {
   }
 }
 
-},{"global/document":18,"global/window":19}],23:[function(require,module,exports){
+},{"global/document":14,"global/window":15}],19:[function(require,module,exports){
 // Create a range object for efficently rendering strings to elements.
 var range;
 
@@ -2072,7 +2020,7 @@ function morphdom(fromNode, toNode, options) {
 
 module.exports = morphdom;
 
-},{}],24:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 module.exports = [
   // attribute events (can be set with attributes)
   'onclick',
@@ -2110,7 +2058,7 @@ module.exports = [
   'onfocusout'
 ]
 
-},{}],25:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 module.exports = [
   {
     path: '/',
@@ -2118,7 +2066,7 @@ module.exports = [
       persist: true,
       layer: 'screens',
       callback: function() {
-        return require('./components/a')
+        return require('./screens/a')
       }
     }
   }, {
@@ -2127,7 +2075,7 @@ module.exports = [
       persist: true,
       layer: 'screens',
       callback: function() {
-        return require('./components/a')
+        return require('./screens/a')
       }
     }
   }, {
@@ -2136,7 +2084,7 @@ module.exports = [
       persist: true,
       layer: 'screens',
       callback: function() {
-        return require('./components/b')
+        return require('./screens/b')
       }
     }
   }, {
@@ -2144,7 +2092,7 @@ module.exports = [
     data: {
       layer: 'sheets',
       callback: function() {
-        return require('./components/c')
+        return require('./screens/c')
       }
     }
   }, {
@@ -2152,13 +2100,65 @@ module.exports = [
     data: {
       layer: 'modals',
       callback: function() {
-        return require('./components/d')
+        return require('./screens/d')
       }
     }
   }
 ]
 
-},{"./components/a":1,"./components/b":2,"./components/c":4,"./components/d":5}],26:[function(require,module,exports){
+},{"./screens/a":22,"./screens/b":23,"./screens/c":24,"./screens/d":25}],22:[function(require,module,exports){
+var yo = require('yo-yo')
+var btn = require('../components/button')
+module.exports = function A(data) {
+  data.next = '/b'
+  return yo`
+    <div class='a'>
+      <h1>A</h1>
+      ${btn(data)}
+    </div>
+  `
+}
+
+},{"../components/button":1,"yo-yo":26}],23:[function(require,module,exports){
+var yo = require('yo-yo')
+var btn = require('../components/button')
+module.exports = function B(data) {
+  data.next = '/c'
+  return yo`
+    <div class='b'>
+      <h1>B</h1>
+      ${btn(data)}
+    </div>
+  `
+}
+
+},{"../components/button":1,"yo-yo":26}],24:[function(require,module,exports){
+var yo = require('yo-yo')
+var btn = require('../components/button')
+module.exports = function C(data) {
+  data.next = '/d'
+  return yo`
+    <div class='c'>
+      <h1>C</h1>
+      ${btn(data)}
+    </div>
+  `
+}
+
+},{"../components/button":1,"yo-yo":26}],25:[function(require,module,exports){
+var yo = require('yo-yo')
+var btn = require('../components/button')
+module.exports = function D(data) {
+  data.next = '/'
+  return yo`
+    <div class='d'>
+      <h1>D</h1>
+      ${btn(data)}
+    </div>
+  `
+}
+
+},{"../components/button":1,"yo-yo":26}],26:[function(require,module,exports){
 var bel = require('bel') // turns template tag into DOM elements
 var morphdom = require('morphdom') // efficiently diffs + morphs two DOM elements
 var defaultEvents = require('./update-events.js') // default events to be copied when dom elements update
@@ -2320,12 +2320,12 @@ module.exports = hyperx(belCreateElement)
 module.exports.createElement = belCreateElement
 
 },{"global/document":28,"hyperx":29}],28:[function(require,module,exports){
-arguments[4][18][0].apply(exports,arguments)
-},{"dup":18,"min-document":7}],29:[function(require,module,exports){
-arguments[4][20][0].apply(exports,arguments)
-},{"dup":20,"hyperscript-attribute-to-property":30}],30:[function(require,module,exports){
-arguments[4][21][0].apply(exports,arguments)
-},{"dup":21}],31:[function(require,module,exports){
+arguments[4][14][0].apply(exports,arguments)
+},{"dup":14,"min-document":3}],29:[function(require,module,exports){
+arguments[4][16][0].apply(exports,arguments)
+},{"dup":16,"hyperscript-attribute-to-property":30}],30:[function(require,module,exports){
+arguments[4][17][0].apply(exports,arguments)
+},{"dup":17}],31:[function(require,module,exports){
 // Create a range object for efficently rendering strings to elements.
 var range;
 
@@ -2900,5 +2900,5 @@ function morphdom(fromNode, toNode, options) {
 module.exports = morphdom;
 
 },{}],32:[function(require,module,exports){
-arguments[4][24][0].apply(exports,arguments)
-},{"dup":24}]},{},[6]);
+arguments[4][20][0].apply(exports,arguments)
+},{"dup":20}]},{},[2]);
