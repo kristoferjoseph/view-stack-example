@@ -1,0 +1,4 @@
+{
+    "head": "<link rel=\"stylesheet\" href=\"%STATIC_PATH%/view-stack-example.css\">",
+    "body": "<script src=\"%STATIC_PATH%/view-stack-example.js\"></script>\n<script>$_mod.ready();</script>"
+}

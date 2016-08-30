@@ -1,0 +1,6 @@
+{
+  "dependencies": [
+    "./styles.css",
+    "require-run: ./index.js"
+  ]
+}

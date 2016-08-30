@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title><%- title %></title>
-  <link rel="stylesheet" href="./styles.css">
+  <%- head %>
 </head>
 <body>
   <script>
-    window.__INITIAL_STATE__ = <%- initialState %>
-    console.log(__INITIAL_STATE__)
+    window.__SERVER_STATE__ = <%- serverState %>
+    console.log(__SERVER_STATE__)
   </script>
-  <script src="bundle.js"></script>
+  <%- body %>
 </body>
 </html>
