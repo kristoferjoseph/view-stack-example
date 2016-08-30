@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "tape ./test.js | tap-spec",
-    "build": "browserify ./index.js -o ./public/bundle.js",
+    "build": "lasso ./styles.css --main ./index.js",
     "watch": "watchify ./index.js -o ./public/bundle.js",
     "start": "node server.js"
   },
@@ -26,14 +26,21 @@
   },
   "homepage": "https://github.com/kristoferjoseph/view-stack-example#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "lasso": "^2.5.8",
     "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
     "view-stack": "^5.0.0"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
+    "compression": "^1.6.2",
+    "lasso-autoprefixer": "^2.0.0",
     "lasso-cli": "^2.0.6",
+    "lasso-marko": "^2.0.7",
+    "marko": "^3.10.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
     "watchify": "^3.7.0"
