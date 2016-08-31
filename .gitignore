@@ -1,1 +1,7 @@
 node_modules/
+.cache
+static/Begin-23e0d7e0.js
+static/Begin-6b63b519.css
+static/view-stack-example.css
+static/view-stack-example.js
+.cache/

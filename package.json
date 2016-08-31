@@ -32,7 +32,7 @@
     "express-ejs-layouts": "^2.2.0",
     "lasso": "^2.5.8",
     "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
-    "view-stack": "^5.0.0"
+    "view-stack": "^7.0.4"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
