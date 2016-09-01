@@ -30,9 +30,9 @@ body {
   height: 100%;
 }
 
-.screens,
-.sheets,
-.modals {
+.view-stack-screens,
+.view-stack-sheets,
+.view-stack-modals {
   position: absolute;
   top: 0;
   right: 0;

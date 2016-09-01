@@ -26,13 +26,11 @@
   },
   "homepage": "https://github.com/kristoferjoseph/view-stack-example#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
-    "express-ejs-layouts": "^2.2.0",
     "lasso": "^2.5.8",
     "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
-    "view-stack": "^7.0.4"
+    "view-stack": "^8.0.1"
   },
   "devDependencies": {
     "browserify": "^13.1.0",

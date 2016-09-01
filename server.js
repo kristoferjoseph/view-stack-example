@@ -1,17 +1,14 @@
-var path = require('path')
-var express = require('express')
-var parser = require('body-parser')
-var layouts    = require('express-ejs-layouts')
+var path        = require('path')
+var express     = require('express')
 var compression = require('compression')
-var routes = require('./routes')
-var viewStack = require('view-stack')(routes)
-var lasso = require('lasso')
-var app = express()
+var routes      = require('./routes')
+var viewStack   = require('view-stack')(routes)
+var lasso       = require('lasso')
+var app         = express()
+
 app.use('/static', express.static('static'))
 app.set('view engine', 'ejs')
 app.set('views', './views')
-app.use(parser.json())
-app.use(parser.urlencoded({extended:true}))
 app.use(
   function(req, res, next) {
     res.blap = function(state) {
@@ -19,7 +16,7 @@ app.use(
       state.serverState = JSON.stringify(state)
       lasso.lassoPage(
         {
-          name: 'Begin',
+          name: 'view-stack-example',
           dependencies: './browser.json'
         },
         function(err, result) {
