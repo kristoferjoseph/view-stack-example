@@ -54,7 +54,7 @@ app.get('/c', function(req, res) {
 })
 
 app.get('/d', function(req, res) {
-  res.blap({title:'C'})
+  res.blap({title:'D'})
 })
 
 app.listen(6661, function() {

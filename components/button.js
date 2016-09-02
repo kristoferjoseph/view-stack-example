@@ -2,7 +2,7 @@ var yo = require('yo-yo')
 
 module.exports = function(data) {
   function click(e) {
-    data.app.navigate(data.next)
+    data.navigate(data.next)
   }
   return yo`
     <button
